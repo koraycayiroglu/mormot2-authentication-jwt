@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>jwt test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<p><b>test jwt :</b></p>
+		<form>
+			<label>Username:</label><br>
+			<input type="text" id="login" placeholder="login" value="User"><br>
+			<label>Password:</label><br>
+			<input type="password" id="mdp" placeholder="mdp" value="synopse"><br>			
+			<label>Server : port:</label><br>
+			<input type="text" id="server" placeholder="server" value="127.0.0.1:888"><br>
+			<label>ROOT:</label><br>
+			<input type="text" id="mainuri" placeholder="mainuri" value="root"><br><br>			
+			<label>API:</label>
+			<input type="text" id="request" placeholder="request" style="width:90%" value="Sample.FullList"><br><br>			
+			<button type="button" id="submit" value="submit">Connect</button>
+			<button type="button" id="submit2" value="submit2">Call</button>
+			<button type="button" id="submitjwt" value="submit2">Check Token</button>
+			<button type="button" id="refreshjwt" value="submit2">Refresh Token</button>
+		</form>
+		<br>
+		<label>JWT :</label><br>
+		<textarea id="consoleJWT" style="min-height:150px;width:100%">
+		</textarea>
+		
+		<label>API Result :</label><br>
+		<textarea id="console" style="min-height:400px;width:100%">
+		</textarea>
+
+		<script src="assets/lib/jquery/jquery.js"></script>
+		
+		<script src="jwt.js"></script>
+		<script src="test.js"></script>
+	</body>
+</html>

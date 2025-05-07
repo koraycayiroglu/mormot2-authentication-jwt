@@ -1,0 +1,70 @@
+## test script using artillery
+## doc: https://www.artillery.io/docs
+
+config:
+  #target: https://jwt.mykingspark.sek/root
+  target: http://127.0.0.1:888/root
+  tls:
+    rejectUnauthorized: false
+  environments:
+    load:
+      phases:
+        - duration: 60
+          arrivalRate: 1
+          rampTo: 5
+          name: Warm up phase
+        - duration: 60
+          arrivalRate: 5
+          rampTo: 10
+          name: Ramp up load
+        - duration: 30
+          arrivalRate: 10
+          rampTo: 30
+          name: Spike phase
+    functional:
+      # We don't need to specify a phase here. Artillery will
+      # launch a single VU when there is no phase definition.
+      plugins:
+        expect: {}
+        metrics-by-endpoint: {}
+scenarios:
+  - name: "server_jwt_service_Example"
+    flow:
+      - log: 'login - obtain jwt token'
+      - get:
+          url: "/Auth?username=User&password=synopse"
+          capture:
+            - json: "$.jwt"
+              as: authToken
+          expect:
+            - statusCode: 200
+            - contentType: json
+            - hasProperty: result
+            - hasProperty: jwt
+      - log: "got token: {{authToken}}"
+
+      - log: 'calling service Example.Find'
+      - loop:
+          - get:
+              url: '/Example.Find/?%5B%7BName%3D%22test%22%7D%5D'
+              ifTrue: 'authToken'
+              headers:
+                authorization: "Bearer {{authToken}}"
+              expect:
+                - statusCode: 200
+                - contentType: json
+          - get:
+              url: "/IsValidToken"
+              headers:
+                authorization: "Bearer {{authToken}}"
+              expect:
+                - statusCode: 200
+        count: 100000
+      # made
+      - think: 3
+      - log: 'refresh token'
+      - get:
+          url: "/RefreshToken?username=User&password=synopse"
+          headers:
+            authorization: "Bearer {{authToken}}"
+      - log: "Now used a refreshed auth token: {{authToken}}"
