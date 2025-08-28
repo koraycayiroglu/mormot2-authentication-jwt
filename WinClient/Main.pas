@@ -11,6 +11,8 @@ type
     cStartTest: TButton;
     eResult: TMemo;
     cClearLog: TButton;
+    cRefreshToken: TButton;
+    cCheckToken: TButton;
     procedure cStartTestClick(Sender: TObject);
     procedure cClearLogClick(Sender: TObject);
   private

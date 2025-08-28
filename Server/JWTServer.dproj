@@ -7,7 +7,7 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <TargetedPlatforms>2</TargetedPlatforms>
+        <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Console</AppType>
         <ProjectName Condition="'$(ProjectName)'==''">JWTServer</ProjectName>
     </PropertyGroup>
@@ -79,7 +79,7 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_ExeOutput>./</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -161,6 +161,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>office2K;fmxdae;NxGridDsgn_dxe3;DBXSqliteDriver;fmx;IndySystem;TeeDB;vclib;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DataSnapServer;DataSnapProviderClient;DBXSybaseASEDriver;DbxCommonDriver;vclimg;dbxcds;DatasnapConnectorsFreePascal;NxDBGridDsgn_dxe3;vcldb;OXml;vcldsnap;DBXDb2Driver;DBXOracleDriver;CustomIPTransport;NxDBGridRun_dxe3;vclribbon;dsnap;IndyIPServer;IndyCore;vcl;fmxase;IndyIPCommon;DBXMSSQLDriver;inetdbxpress;webdsnap;JclDeveloperTools;NxCollectionRun_dxe3;adortl;NxCollectionDsgn_dxe3;NxGridRun_dxe3;bindcompfmx;NxCommonRun_dxe3;rtl;dbrtl;DbxClientDriver;NxCommonDsgn_dxe3;bindcomp;inetdb;Tee;JclContainers;DBXOdbcDriver;NxAddonsRun_dxe3;xmlrtl;ibxpress;IndyProtocols;DBXMySQLDriver;NxSheetRun_dxe3;vclactnband;bindengine;soaprtl;bindcompdbx;TeeUI;bindcompvcl;Jcl;vclie;vcltouch;websnap;VclSmp;DBXInformixDriver;DataSnapConnectors;NxInspectorRun_dxe3;dsnapcon;DBXFirebirdDriver;inet;JclVcl;vclx;DBXSybaseASADriver;fmxobj;NxInspectorDsgn_dxe3;VirtualTreesR;dbexpress;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
@@ -267,6 +269,7 @@
                     <VersionInfoKeys Name="CFBundleExecutable"/>
                 </VersionInfoKeys>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\edmGUI.bpl">EDM GUI Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
@@ -1146,7 +1149,7 @@
                 <Platform value="iOSSimARM64">False</Platform>
                 <Platform value="OSX64">False</Platform>
                 <Platform value="OSXARM64">False</Platform>
-                <Platform value="Win32">False</Platform>
+                <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
         </BorlandProject>

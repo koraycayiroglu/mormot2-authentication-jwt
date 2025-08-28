@@ -39,4 +39,20 @@ object MainForm: TMainForm
     TabOrder = 2
     OnClick = cClearLogClick
   end
+  object cRefreshToken: TButton
+    Left = 340
+    Top = 8
+    Width = 100
+    Height = 25
+    Caption = 'Refresh Token'
+    TabOrder = 3
+  end
+  object cCheckToken: TButton
+    Left = 234
+    Top = 8
+    Width = 100
+    Height = 25
+    Caption = 'Check Token'
+    TabOrder = 4
+  end
 end

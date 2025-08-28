@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">WinClient</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -60,7 +60,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_ExeOutput>./</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -71,6 +71,8 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>WinClient</SanitizedProjectName>
+        <VerInfo_Locale>1055</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>dxPScxExtCommonRS29;dxRichEditControlCoreRS29;vclie;bindengine;IndyIPCommon;FMXfrCoreLibrary29;cxVerticalGridRS29;dbxcds;vcledge;frLanguageSlovak29;FMXfrLanguageLatvian29;dxPSDBTeeChartRS29;cxSchedulerWebServiceStorageRS29;dxRichEditControlRS29;dxPsPrVwAdvRS29;FMXfrLanguageDutch29;dxPSdxGaugeControlLnkRS29;TMSScripter_IDE;frLanguageArabic29;dxRibbonCustomizationFormRS29;FMXfsTee29;dbexpress;frLanguageCatalon29;dxEMFRS29;frLanguageCzech29;inet;vcltouch;uniGUI29VCL;dxPSdxFCLnkRS29;tdsprovider290;dxSpreadSheetCoreConditionalFormattingDialogsRS29;FMXfrLanguageTurkish29;CustomIPTransport;FMXfrLanguageCzech29;frLanguageItalian29;frxPDF29;uniGUI29;FMXfsADO29;dxPScxTLLnkRS29;frxe29;fsDB29;vclFireDAC;dxSpreadSheetRS29;frLanguageDanish29;dxPScxVGridLnkRS29;frxTee29;rtl;FMXfrLanguageGerman29;frLanguageLithuanian29;dxServerModeRS29;DBXSqliteDriver;coreCommon;dxBarDBNavRS29;frLanguageRussian29;FMXfrLanguageBrazil229;inetdbxpress;FireDAC;xmlrtl;dsnap;frLanguageSerbian29;dxPSdxLCLnkRS29;FMXfrLanguageFrench29;frControlsLibrary29;frxQueryBuilder29;dxPSLnksRS29;frxIntIOIndy29;fqbADO29;dxPSdxOCLnkRS29;cxSchedulerGridRS29;uniGUI29Core;coreGUI;dxPSdxDBTVLnkRS29;frLocalizationLibrary29;dxGaugeControlRS29;bindcompvclwinx;dxOrgChartAdvancedCustomizeFormRS29;FMXfrLanguageArabic29;bindcompfmx;frLanguageGerman29;dxFlowChartLayoutsRS29;FMXfrLanguageItalian29;dxdborRS29;frLanguageIndonesian29;FMXfrLanguageSpanish29;Tee;dxPScxGridLnkRS29;vclactnband;TMSScripter;dxRichEditCoreRS29;DBXMySQLDriver;FMXfs29;fsADO29;VclSmp;dxFlowChartAdvancedCustomizeFormRS29;dxPSTeeChartRS29;fmxase;FMXfrLanguageFarsi29;dxFlowChartRS29;TMSDiagram;FMXfrLanguageChinese29;frxcs29;FMXfrLanguageJapanese29;cxGridRS29;dxSpellCheckerRS29;frLanguageSlovene29;frADODataLibrary29;dxMapControlRS29;MiTeC_Common;vcldsnap;DBXInterBaseDriver;frLanguageBrazil129;vcldb;FMXfrLanguageCatalon29;FMXfrLanguageHungarian29;cxSchedulerTreeBrowserRS29;dacfmx290;dxTabbedMDIRS29;inetstn;frxIntIO29;dxHttpIndyRequestRS29;frLanguageJapanese29;cxPivotGridOLAPRS29;uIndy29;FMXfrLanguageDanish29;FMXfrLanguageSlovene29;vcl;TMSScripter_Legacy;dxCoreRS29;fsFD29;FMXfrLanguageSwedish29;dxSkinsCoreRS29;frLanguageDutch29;FireDACPgDriver;fqbSM29;tethering;uniTools29;frLanguageBulgarian29;bindcompvcl;FMXfrLanguageBrazil29;CloudService;FMXfrLocalizationLibrary29;frGraphicsLibrary29;unidac290;cxSchedulerRS29;FMXfrLanguageRomanian29;soapserver;dxPScxCommonRS29;FireDACIBDriver;dxRibbonRS29;vclwinx;fs29;fmx;FMXfrLanguageSlovak29;DbxCommonDriver;VCLRESTComponents;dxSpreadSheetReportDesignerRS29;FireDACCommonODBC;dxComnRS29;fsTee29;dxFlowChartDesignerRS29;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;frxADOQueryBuilder29;dxBarExtDBItemsRS29;FmxTeeUI;cxFireDACAdaptersRS29;frLanguageHungarian29;FMXfrLanguageUkrainian29;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;frCoreLibrary29;frxFDQueryBuilder29;frLanguageBrazil29;FMXfrLanguageSwiss29;dxDockingRS29;vquery290;dxorgcRS29;fmxdae;MSICS_Rtl;coreDB;dxPSRichEditControlLnkRS29;dxPSdxSpreadSheetLnkRS29;FMXfrLanguageBrazil129;Excel4DelphiLib;FMXfsDB29;fqbFD29;cxADOAdaptersRS29;frLanguageSwiss29;dxPSPrVwRibbonRS29;IndySystem;frLanguageSwedish29;dxPSdxDBOCLnkRS29;dxGDIPlusRS29;FMXfrLanguagePolish29;frLanguageUkrainian29;dxPSCoreRS29;FireDACCommon;dxPSdxMapControlLnkRS29;cxGridEMFRS29;dxGanttControlRS29;dxPScxPivotGridLnkRS29;dxADOServerModeRS29;dxWizardControlRS29;TMSScripter_VCL;gaSQLParser;bindcompdbx;FMXfrLanguageLithuanian29;FireDACMySQLDriver;dxCloudServiceLibraryRS29;fqb29;frLanguageFrench29;dxSpreadSheetCoreRS29;dxNavBarRS29;frxSM29;vclimg;unidacfmx290;dxFireDACEMFRS29;frFDDataLibrary29;CPort_R;FMXfrLanguageRussian29;frLanguageFarsi29;fmxobj;bindcompvclsmp;frx29;FMXfrLanguageHebrew29;FMXfrLanguageCroatian29;frLanguageChinese29;frLanguageHebrew29;dxmdsRS29;FMXfrLanguageBulgarian29;TMSScripter_Memo;dxPScxSchedulerLnkRS29;dxADOEMFRS29;dxChartControlRS29;frxDB29;fqbDBX29;FireDACCommonDriver;IndyIPClient;frxHTML29;dxPDFViewerRS29;frLanguageTaiwan29;dxBarExtItemsRS29;frxDBXQueryBuilder29;frLanguageRomanian29;inetdb;frLanguageBrazil229;cxPivotGridChartRS29;fmxFireDAC;cxTreeListdxBarPopupMenuRS29;frLanguageCroatian29;cxSchedulerRibbonStyleEventEditorRS29;coreTools;dxtrmdRS29;FMXfrLanguageTaiwan29;dbrtl;dxPScxPCProdRS29;Skia.Package.FMX;FMXfrLanguagePortuguese29;TeeDB;FireDACMSAccDriver;dxRichEditDocumentModelRS29;frLanguageTurkish29;frLanguageGreek29;msprovider290;cxLibraryRS29;Skia.Package.VCL;dxPSdxPDFViewerLnkRS29;unidacvcl290;bindcomp;coreVCL;cxExportRS29;frLanguageLatvian29;IndyCore;RESTBackendComponents;frLanguageSpanish29;dxTileControlRS29;dxFireDACServerModeRS29;frSmartMemo29;FireDACADSDriver;frxFD29;RESTComponents;IndyIPServer;dsnapxml;adortl;dxdbtrRS29;dsnapcon;cxPivotGridRS29;FMXfrLanguageSerbian29;dac290;frxADO29;FMXfrLanguageIndonesian29;dxBarRS29;frLanguagePortuguese29;frLanguagePolish29;frxDBX29;FMXfrLanguageGreek29;dxSpreadSheetConditionalFormattingDialogsRS29;cxTreeListRS29;FMXTee;soaprtl;dxDBXServerModeRS29;dxPSdxChartControlLnkRS29;$(DCC_UsePackage)</DCC_UsePackage>
@@ -106,6 +108,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -150,6 +154,11 @@
                 <Source>
                     <Source Name="MainSource">WinClient.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\edmGUI.bpl">EDM GUI Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="Win32\Debug\WinClient.exe" Configuration="Debug" Class="ProjectOutput">
