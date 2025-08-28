@@ -1,0 +1,5 @@
+﻿*.local
+*.identcache
+Server/Win64/Debug/*
+WinClient/__history/*
+WinClient/Win32/Debug/*

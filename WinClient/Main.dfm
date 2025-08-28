@@ -1,6 +1,7 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'Connect'
   ClientHeight = 327
   ClientWidth = 448
@@ -14,7 +15,7 @@ object MainForm: TMainForm
   object cStartTest: TButton
     Left = 8
     Top = 8
-    Width = 75
+    Width = 100
     Height = 25
     Caption = 'Start Test'
     TabOrder = 0
