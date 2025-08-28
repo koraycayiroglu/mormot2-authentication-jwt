@@ -66,8 +66,11 @@ type
     procedure InternalSetClass; override;
     function InternalRequest(const url, method: RawUTF8; var Header, Data, DataType: RawUTF8): Int64Rec; override;
   public
-    function SetUser(const aUserName, aPassword: RawUTF8;
-      aHashedPassword: Boolean=false): boolean; reintroduce;
+    function IsTokenValid: RawUTF8;
+    function RefreshToken(const aUsername, aPassword: RawUTF8): RawUTF8;
+
+    function SetUser(const aUserName, aPassword: RawUTF8; aHashedPassword: Boolean=false): boolean; reintroduce;
+
     property jwt : RawUTF8 read fJWT write fJWT;
   end;
 
@@ -338,6 +341,16 @@ end;
 procedure TRestHttpClientJWT.InternalSetClass;
 begin
   fRequestClass := TWinHTTP;
+end;
+
+function TRestHttpClientJWT.IsTokenValid: RawUTF8;
+begin
+  CallBackGet('IsValidToken', [], Result);
+end;
+
+function TRestHttpClientJWT.RefreshToken(const aUsername, aPassword: RawUTF8): RawUTF8;
+begin
+  CallBackGet('RefreshToken', ['username', aUsername, 'password', aPassword], Result);
 end;
 
 function TRestHttpClientJWT.SetUser(const aUserName, aPassword: RawUTF8;

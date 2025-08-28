@@ -4,23 +4,37 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, mormot.core.base;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, mormot.core.base, RestServer.U_JWT;
 
 type
   TMainForm = class(TForm)
-    cStartTest: TButton;
+    cAuthenticate: TButton;
     eResult: TMemo;
     cClearLog: TButton;
     cRefreshToken: TButton;
     cCheckToken: TButton;
-    procedure cStartTestClick(Sender: TObject);
+    gbConfig: TGroupBox;
+    lServer: TLabel;
+    lUsername: TLabel;
+    lPassword: TLabel;
+    Label2: TLabel;
+    Label4: TLabel;
+    eServer: TEdit;
+    ePortNo: TEdit;
+    eRoot: TEdit;
+    eUsername: TEdit;
+    ePassword: TEdit;
+    procedure cAuthenticateClick(Sender: TObject);
     procedure cClearLogClick(Sender: TObject);
+    procedure cCheckTokenClick(Sender: TObject);
+    procedure cRefreshTokenClick(Sender: TObject);
   private
     { Private declarations }
-    procedure AddLog(const AText: RawUTF8);
-    procedure ClearLog;
+    fClient: TRestHttpClientJWT;
   public
     { Public declarations }
+    procedure AddLog(const AText: RawUTF8);
+    procedure ClearLog;
   end;
 
 var
@@ -28,7 +42,7 @@ var
 
 implementation
 
-uses RestServer.U_DTB, RestServer.U_JWT;
+uses mormot.core.text, RestServer.U_DTB;
 
 {$R *.dfm}
 
@@ -47,17 +61,33 @@ begin
   eResult.Clear;
 end;
 
-procedure TMainForm.cStartTestClick(Sender: TObject);
-var fClient: TRestHttpClientJWT;
+procedure TMainForm.cAuthenticateClick(Sender: TObject);
 begin
-  fClient := TRestHttpClientJWT.Create('127.0.0.1', '888', DTBModel('root'));
+  if Assigned(fClient) then
+    FreeAndNil(fClient);
 
-  if fClient.SetUser('User', 'synopse') then begin
-    AddLog('User authenticate');
+  fClient := TRestHttpClientJWT.Create(eServer.Text, ePortNo.Text, DTBModel(eRoot.Text));
+
+  if fClient.SetUser(eUsername.Text, ePassword.Text) then begin
+    AddLog(FormatUTF8('token: %', [fClient.jwt]));
+    AddLog('');
   end else begin
     AddLog('Authentication failed!');
     Exit;
   end;
+end;
+
+procedure TMainForm.cCheckTokenClick(Sender: TObject);
+begin
+  AddLog(FormatUTF8('IsTokenValid: %', [fClient.IsTokenValid]));
+  AddLog('');
+end;
+
+procedure TMainForm.cRefreshTokenClick(Sender: TObject);
+begin
+  AddLog(FormatUTF8('RefreshToken: %', [fClient.RefreshToken(eUsername.Text, ePassword.Text)]));
+  AddLog(FormatUTF8('token: %', [fClient.jwt]));
+  AddLog('');
 end;
 
 end.
